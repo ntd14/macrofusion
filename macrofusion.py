@@ -120,9 +120,9 @@ settings = {
         # weight given to pixels in high-contrast neighborhoods
         "contrast-weight"       : ["--contrast-weight",         0.0],
         # mean of Gaussian weighting function
-        "exposure-mu"           : ["--exposure-mu",             0.5],
+        "exposure-optimum"           : ["--exposure-optimum",             0.5],
         # standard deviation of Gaussian weighting function 
-        "exposure-sigma"        : ["--exposure-sigma",          0.2],
+        "exposure-width"        : ["--exposure-width",          0.2],
         # limit number of blending LEVELS to use (1 to 29)
         "levels"                : ["--levels",                  29],
         # average over all masks; this is the default
@@ -147,9 +147,9 @@ settings = {
         # load masks from files
         #"load-masks"            : ["--load-masks", "%f-softmask-%n.png:%f-hardmask-%n.png"],
         # image CACHESIZE in megabytes; default: 1024MB
-        "image_cachesize"       : ["-m",                        4096],
+        #"image_cachesize"       : ["-m",                        4096],
         # image cache BLOCKSIZE in kilobytes; default: 2048KB
-        "image_cacheblocksize"  : ["-b",                        4096],
+        #"image_cacheblocksize"  : ["-b",                        4096],
         # Misc arguments
         "misc_args"             : ["",                          False]
     }
@@ -305,7 +305,7 @@ class Interface:
         self.hscalemu.set_adjustment(self.ajus_mu)
         self.spinbuttonmu = self.gui.get_object("spinbuttonmu")
         self.spinbuttonmu.set_digits(2)
-        self.spinbuttonmu.set_value(settings["fuse_settings"]["exposure-mu"][1])
+        self.spinbuttonmu.set_value(settings["fuse_settings"]["exposure-optimum"][1])
         self.spinbuttonmu.set_adjustment(self.ajus_mu)
         
         self.hscalesigma = self.gui.get_object("hscalesigma")
@@ -313,7 +313,7 @@ class Interface:
         self.hscalesigma.set_adjustment(self.ajus_sigma)
         self.spinbuttonsigma = self.gui.get_object("spinbuttonsigma")
         self.spinbuttonsigma.set_digits(2)
-        self.spinbuttonsigma.set_value(settings["fuse_settings"]["exposure-sigma"][1])
+        self.spinbuttonsigma.set_value(settings["fuse_settings"]["exposure-width"][1])
         self.spinbuttonsigma.set_adjustment(self.ajus_sigma)
 
         self.spinbuttonlargeurprev = self.gui.get_object("spinbuttonlargeurprev")
@@ -619,8 +619,8 @@ class Interface:
 
     def update_enfuse_options(self):
         settings["fuse_settings"]["exposure-weight"][1]     = self.spinbuttonexp.get_value()
-        settings["fuse_settings"]["exposure-mu"][1]         = self.spinbuttonmu.get_value()
-        settings["fuse_settings"]["exposure-sigma"][1]      = self.spinbuttonsigma.get_value()
+        settings["fuse_settings"]["exposure-optimum"][1]         = self.spinbuttonmu.get_value()
+        settings["fuse_settings"]["exposure-width"][1]      = self.spinbuttonsigma.get_value()
         settings["fuse_settings"]["contrast-weight"][1]     = self.spinbuttoncont.get_value()
         settings["fuse_settings"]["saturation-weight"][1]   = self.spinbuttonsat.get_value()
         settings["fuse_settings"]["levels"][1]              = self.spinbuttonlevel.get_value_as_int()
