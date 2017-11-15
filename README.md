@@ -13,6 +13,8 @@ GNU GPL.
 
 (c) Dariusz Duma <dhor@toxic.net.pl>
 
+Dev branch Note:
+The update to enfuse 4.2 has broken some commands (enfuse updated their commands and deprecated some which are used in macrofusion), as a result the CIECAM02 color profile option, cache size, block size and possably other options will not work. If you need these commands downgrade enfuse to 4.0. 
 
 
 Install
@@ -35,7 +37,7 @@ System wide:
 -------
 Use PPA or .deb packages (the only packages so far).
 
-PPA (Ubuntu Trusty, Mint 17)
+PPA (Ubuntu Trusty, Mint 17) ### Does not work for mint 18 so probably wont for Xenial Xerus either
 
 sudo add-apt-repository ppa:dhor/myway
 
