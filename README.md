@@ -37,7 +37,7 @@ System wide:
 -------
 Use PPA or .deb packages (the only packages so far).
 
-PPA (Ubuntu Trusty, Mint 17) ### Does not work for mint 18 so probably wont for Xenial Xerus either
+PPA (Ubuntu Trusty, Mint 17) (Does not work for mint 18 so probably wont for Xenial Xerus either, just use the local version)
 
 sudo add-apt-repository ppa:dhor/myway
 
