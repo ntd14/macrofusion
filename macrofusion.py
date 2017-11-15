@@ -141,7 +141,7 @@ settings = {
         # append "%" to LCESCALE for values relative to EDGESCALE; append "%" to LCEFACTOR for relative value
         "contrast-edge-scale"   : ["--contrast-edge-scale",     0, 0, 0],
         # use CIECAM02 to blend colors
-        "use_ciecam"            : ["-c",                        False],
+        "use_ciecam"            : ["--blend-colorspace=ciecam",                        False],
         # save masks to files
         #"save-masks"            : ["--save-masks", "%f-softmask-%n.png:%f-hardmask-%n.png"],
         # load masks from files
